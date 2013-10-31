@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+  "name": "萌典 moedict",
+  "description": "輕鬆查找中文字意。 View Chinese definitions easily when browsing.",
+  "version": "1.0",
+  "permissions": [
+    "http://moedict.org/"
+  ],
+  "content_scripts": [
+    {
+      "js": ["jquery-1.10.2.min.js", "content_script.js"],
+      "run_at": "document_idle",
+      "all_frames": true,
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "web_accessible_resources": [
+    "jquery-1.10.2.min.map"
+  ]
+}
