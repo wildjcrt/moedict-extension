@@ -1,10 +1,17 @@
 function selectCallback(selectionParentElement) {
-  console.log(selectionParentElement.toString());
-}
+  $.ajax({
+    url: "https://www.moedict.tw/uni/" + selectionParentElement.toString(),
+    dataType: 'json',
+    success: function(result) {
+      console.log(result);
+    },
+    error: function(result) {
+      console.log('查無資料');
+    }
+  });
+};
 
-var mouseOrKeyUpHandler;
-
-mouseOrKeyUpHandler = function() {
+document.onmouseup = function() {
   var selection = window.getSelection();
   if (selection.rangeCount > 0) {
     var range = selection.getRangeAt(0);
@@ -13,5 +20,3 @@ mouseOrKeyUpHandler = function() {
     }
   }
 };
-
-document.onmouseup = mouseOrKeyUpHandler;
