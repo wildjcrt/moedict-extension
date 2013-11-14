@@ -1,11 +1,17 @@
 function selectCallback(selectionParentElement, callback) {
   var content;
-
+  var keyMap = { h: '"heteronyms"', b: '"bopomofo"', p: '"pinyin"', d: '"definitions"', c: '"stroke_count"', n: '"non_radical_stroke_count"', f: '"def"', t: '"title"', r: '"radical"', e: '"example"', l: '"link"', s: '"synonyms"', a: '"antonyms"', q: '"quote"', _: '"id"', '=': '"audio_id"', E: '"english"', T: '"trs"', A: '"alt"', V: '"vernacular"', C: '"combined"', D: '"dialects"', S: '"specific_to"' };
   $.ajax({
-    url: "https://www.moedict.tw/uni/" + selectionParentElement.toString(),
-    dataType: 'json',
+    url: "https://www.moedict.tw/a/" + selectionParentElement.toString() + ".json",
+    dataType: 'text',
     success: function(result) {
-      content = renderResult(result);
+      result = result.replace(/"([hbpdcnftrelsaqETAVCDS_=])":/g, function(arg$, k){
+          return keyMap[k] + ':';
+      });
+        result = result.replace(/`([^~]+)~/g, function(arg$, word){
+                        return "<a target='_blank' href='https://www.moedict.tw/" + encodeURIComponent(word) + "'>" + word + "</a>";
+          });
+      content = renderResult($.parseJSON(result));
       createDiv(content);
       if (typeof(callback) === 'function') {
           callback();
@@ -36,6 +42,9 @@ document.onmouseup = function() {
   }
 };
 
+var split$ = ''.split, replace$ = ''.replace, join$ = [].join, slice$ = [].slice;
+function canPlayOgg () { return false }
+function canPlayMp3 () { return false }
 function createDiv(content) {
   $('<div id="moedict-extension" class="ui-tooltip ui-widget ui-corner-all ui-widget-content prefer-pinyin-false"></div>').appendTo('body');
   $('#moedict-extension').html(content);
@@ -46,6 +55,7 @@ function renderResult(json){
   var LANG = 'a', replace$ = ''.replace, split$ = ''.split; // copy var from moedict-webkit
   var title, english, heteronyms, radical, translation, nrsCount, sCount, py, charHtml, result;
   title = json.title, english = json.english, heteronyms = json.heteronyms, radical = json.radical, translation = json.translation, nrsCount = json.non_radical_stroke_count, sCount = json.stroke_count, py = json.pinyin;
+  title = title.replace(/<[^>]*>/g, '');
   charHtml = radical ? "<div class='radical'><span class='glyph'>" + renderRadical(replace$.call(radical, /<\/?a[^>]*>/g, '')) + "</span><span class='count'><span class='sym'>+</span>" + nrsCount + "</span><span class='count'> = " + sCount + "</span>&nbsp;<span class='iconic-circle stroke icon-pencil' title='筆順動畫'></span></div>" : "<div class='radical'><span class='iconic-circle stroke icon-pencil' title='筆順動畫'></span></div>";
   result = ls(heteronyms, function(arg$){
     var id, audio_id, ref$, bopomofo, pinyin, trs, definitions, antonyms, synonyms, variants, specific_to, alt, cnSpecific, basename, mp3;
