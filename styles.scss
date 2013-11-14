@@ -1,0 +1,71 @@
+@import "compass/css3";
+@include font-face("MOEDICT", font-files(
+    "https://www.moedict.tw/MOEDICT.woff", woff
+,   "https://www.moedict.tw/MOEDICT.otf", opentype
+,   "https://www.moedict.tw/MOEDICT.ttf", truetype
+), "https://www.moedict.tw/MOEDICT.eot");
+
+@mixin fonts {
+    font-family: "MOEDICT", "Biaodian Pro Sans CNS", "Fira Sans OT", "Lantinghei TC", "黑體-繁", "微軟正黑體", "儷黑 Pro", "蘋果儷中黑", "Adobe 繁黑體 Std", "cwTex 明體", "Adobe 明體 Std", "PMingLiU", "MingLiU", sans-serif, "HanaMinA", "HanaMinB", "HAN NOM A", "HAN NOM B";
+}
+
+#moedict-extension.ui-tooltip {
+    @include fonts;
+    background: #fffcfc !important;
+    &.bpmf {
+        font-size: 80%;
+        width: auto;
+        min-width: auto;
+        background: #f0f0f0;
+    }
+    .xrefs {
+        display: none;
+    }
+    .entry .part-of-speech {
+        position: absolute;
+        left: 7px;
+    }
+    li {
+        .part-of-speech {
+            position: relative;
+            left: 0px;
+        }
+        @include fonts;
+        margin: 0 !important;
+        margin-left: -18px !important;
+        margin-top: 5px;
+        line-height: 1.35 !important;
+        padding: 0 !important;
+    }
+    .ol, .definition {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    .entry {
+        border-bottom: none;
+        font-size: 80%;
+    }
+    min-width: 300px;
+    width: 300px;
+    max-height: 300px;
+    overflow: hidden;
+    word-break: break-all;
+    .bopomofo {
+        margin: 0px;
+        padding: 0px;
+        font-size: 75%;
+    }
+    .title {
+        margin: 0;
+        padding: 0;
+        font-size: 130%;
+        line-height: 120%;
+        .playAudio { display: none !important }
+    }
+    .example {
+        display: none;
+    }
+    .quote, .antonyms, .synonyms, .variants, .radical {
+        display: none;
+    }
+}
