@@ -1,12 +1,18 @@
-function selectCallback(selectionParentElement) {
+function selectCallback(selectionParentElement, callback) {
   $.ajax({
     url: "https://www.moedict.tw/uni/" + selectionParentElement.toString(),
     dataType: 'json',
     success: function(result) {
-      console.log(result);
+      createDiv('');
+      if (typeof(callback) === 'function') {
+          callback();
+      };
     },
     error: function(result) {
-      console.log('查無資料');
+      createDiv('查無資料');
+      if (typeof(callback) === 'function') {
+          callback();
+      };
     }
   });
 };
@@ -16,7 +22,16 @@ document.onmouseup = function() {
   if (selection.rangeCount > 0) {
     var range = selection.getRangeAt(0);
     if (range.toString()) {
-      selectCallback(range);
+      thisY = window.pageYOffset + event.clientY + 10;
+      thisX = window.pageXOffset + event.clientX + 10;
+      selectCallback(range, function(){
+        $('#moedict-extension').css('top', thisY);
+        $('#moedict-extension').css('left', thisX);
+      });
     }
   }
+};
+
+function createDiv(content) {
+  $('<div id="moedict-extension">foo</div>').appendTo('body');
 };
