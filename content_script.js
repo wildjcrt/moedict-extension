@@ -6,21 +6,21 @@ function selectCallback(selectionParentElement, callback) {
     dataType: 'text',
     success: function(result) {
       result = result.replace(/"([hbpdcnftrelsaqETAVCDS_=])":/g, function(arg$, k){
-          return keyMap[k] + ':';
+        return keyMap[k] + ':';
       });
-        result = result.replace(/`([^~]+)~/g, function(arg$, word){
-                        return "<a target='_blank' href='https://www.moedict.tw/" + encodeURIComponent(word) + "'>" + word + "</a>";
-          });
+      result = result.replace(/`([^~]+)~/g, function(arg$, word){
+        return "<a target='_blank' href='https://www.moedict.tw/" + encodeURIComponent(word) + "'>" + word + "</a>";
+      });
       content = renderResult($.parseJSON(result));
       createDiv(content);
       if (typeof(callback) === 'function') {
-          callback();
+        callback();
       };
     },
     error: function(result) {
       createDiv('查無資料');
       if (typeof(callback) === 'function') {
-          callback();
+        callback();
       };
     }
   });
