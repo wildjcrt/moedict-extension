@@ -37,7 +37,7 @@ document.onmouseup = function() {
 };
 
 function createDiv(content) {
-  $('<div id="moedict-extension"></div>').appendTo('body');
+  $('<div id="moedict-extension" class="ui-tooltip ui-widget ui-corner-all ui-widget-content prefer-pinyin-false"></div>').appendTo('body');
   $('#moedict-extension').html(content);
 };
 
