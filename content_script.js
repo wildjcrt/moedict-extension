@@ -197,3 +197,34 @@ function renderRadical(char){
   }
   return "<a title='部首檢索' class='xref' style='color: white' href='#@" + char + "'> " + char + "</a>";
 }
+
+function trs2bpmf(trs){
+  if (LANG === 'h') {
+    return ' ';
+  }
+  if (LANG === 'a') {
+    return trs;
+  }
+  return trs.replace(/[A-Za-z\u0300-\u030d]+/g, function(it){
+    var tone;
+    tone = '';
+    it = it.toLowerCase();
+    it = it.replace(/([\u0300-\u0302\u0304\u030d])/, function(it){
+      tone = Tones[it];
+      return '';
+    });
+    it = it.replace(/^(tsh?|[sj])i/, '$1ii');
+    it = it.replace(/ok$/, 'ook');
+    it = it.replace(RegExp('^(' + C + ')((?:' + V + ')+[ptkh]?)$'), function(){
+      return Consonants[arguments[1]] + arguments[2];
+    });
+    it = it.replace(/[ptkh]$/, function(it){
+      tone = Tones[it + tone];
+      return '';
+    });
+    it = it.replace(RegExp('(' + V + ')', 'g'), function(it){
+      return Vowels[it];
+    });
+    return it + (tone || '\uFFFD');
+  }).replace(/[- ]/g, '').replace(/\uFFFD/g, ' ').replace(/\. ?/g, '。').replace(/\? ?/g, '？').replace(/\! ?/g, '！').replace(/\, ?/g, '，');
+}
