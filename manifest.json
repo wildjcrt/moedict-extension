@@ -12,7 +12,8 @@
       "css": ["styles.css"],
       "run_at": "document_idle",
       "all_frames": true,
-      "matches": ["<all_urls>"]
+      "matches": ["<all_urls>"],
+      "exclude_matches": ["http://moedict.org/", "https://www.moedict.tw/"]
     }
   ],
   "web_accessible_resources": [
