@@ -50,6 +50,13 @@ $(document).on('click', '#moedict-extension', function(e){
   e.stopPropagation();
 });
 
+// FIX ME: dirty hack for prevent onmouseup event trigger when clicking
+$(document).on('mousedown', '#moedict-extension a', function(e){
+  window.getSelection().empty();
+}).on('mouseup', '#moedict-extension a', function(){
+  $('#moedict-extension').hide();
+});
+
 var LANG = 'a', split$ = ''.split, replace$ = ''.replace, join$ = [].join, slice$ = [].slice;
 function canPlayOgg () { return false }
 function canPlayMp3 () { return false }
