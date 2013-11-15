@@ -42,6 +42,14 @@ document.onmouseup = function() {
   }
 };
 
+$(document).on('click', function(){
+  $('#moedict-extension').hide();
+});
+
+$(document).on('click', '#moedict-extension', function(e){
+  e.stopPropagation();
+});
+
 var LANG = 'a', split$ = ''.split, replace$ = ''.replace, join$ = [].join, slice$ = [].slice;
 function canPlayOgg () { return false }
 function canPlayMp3 () { return false }
@@ -49,7 +57,7 @@ function createDiv(content) {
   if ($('#moedict-extension').length === 0) {
     $('<div id="moedict-extension" class="ui-tooltip prefer-pinyin-false"></div>').appendTo('body');
   }
-  $('#moedict-extension').html(content);
+  $('#moedict-extension').show().html(content);
 };
 
 // rename render => renderResult
