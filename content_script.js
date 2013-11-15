@@ -47,7 +47,7 @@ function canPlayOgg () { return false }
 function canPlayMp3 () { return false }
 function createDiv(content) {
   if ($('#moedict-extension').length === 0) {
-    $('<div id="moedict-extension" class="ui-tooltip ui-widget ui-corner-all ui-widget-content prefer-pinyin-false"></div>').appendTo('body');
+    $('<div id="moedict-extension" class="ui-tooltip prefer-pinyin-false"></div>').appendTo('body');
   }
   $('#moedict-extension').html(content);
 };

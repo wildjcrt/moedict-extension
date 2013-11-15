@@ -16,7 +16,7 @@
   -webkit-box-shadow: #d4d4d4 0 3px 3px;
   -moz-box-shadow: #d4d4d4 0 3px 3px;
   box-shadow: #d4d4d4 0 3px 3px;
-  padding: 2px;
+  padding: 10px;
   min-width: 300px;
   width: 300px;
   overflow: hidden;
@@ -40,7 +40,8 @@
     position: absolute;
     left: 7px;
     color: #eee;
-    background: #111; }
+    background: rgb(107, 0, 0);
+    padding: 1px; }
     #moedict-extension.ui-tooltip .entry .part-of-speech a {
       cursor: normal;
       color: #eef; }
@@ -60,6 +61,7 @@
     margin: 0 !important;
     padding: 0 !important; }
   #moedict-extension.ui-tooltip .entry {
+    padding-left: 10px;
     border-bottom: none;
     font-size: 80%; }
   #moedict-extension.ui-tooltip .bopomofo {
@@ -77,3 +79,19 @@
     display: none; }
   #moedict-extension.ui-tooltip .quote, #moedict-extension.ui-tooltip .antonyms, #moedict-extension.ui-tooltip .synonyms, #moedict-extension.ui-tooltip .variants, #moedict-extension.ui-tooltip .radical {
     display: none; }
+  #moedict-extension.ui-tooltip a {
+    color: #000;
+    text-decoration: none;
+  }
+  #moedict-extension.ui-tooltip a:hover, #moedict-extension.ui-tooltip a:focus {
+    background: #ddd;
+    background-image: #ddd !important;
+    color: #0070A3;
+    outline: 1px solid #69d2fc;
+  }
+  #moedict-extension.ui-tooltip a.erase:hover, #moedict-extension.ui-tooltip a.lang:hover {
+    background: #ddd;
+    outline: none !important;
+    border: none;
+    border-radius: 30px;
+  }
