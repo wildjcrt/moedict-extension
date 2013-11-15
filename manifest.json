@@ -17,5 +17,8 @@
   ],
   "web_accessible_resources": [
     "jquery-1.10.2.min.map"
-  ]
+  ],
+  "icons": { "16": "images/icon16.png",
+             "48": "images/icon48.png",
+            "128": "images/icon128.png" }
 }
