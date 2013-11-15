@@ -37,6 +37,7 @@ document.onmouseup = function() {
         $('#moedict-extension').css('position', 'absolute');
         $('#moedict-extension').css('top', thisY);
         $('#moedict-extension').css('left', thisX);
+        $('#moedict-extension').css('z-index', 9999);
       });
     }
   }
