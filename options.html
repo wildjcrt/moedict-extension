@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>萌典 Moedict 擴充套件選項</title>
+  </head>
+  <body>
+    <div id="content">
+      <div id="title">
+        <img src="/images/icon48.png" title="萌典" alt="萌典">
+        <div>擴充套件選項</div>
+      </div>
+      <form name="options_form" action="">
+        <div class="option_row">
+          <div class="option_name">Pop-up definitions:</div>
+          <div class="option_value">
+            <div class="option_value_primary">
+              <input type="checkbox" name="popup_select_checkbox"
+                     id="popup_select_checkbox">
+              <label for="popup_select_checkbox">
+                跳出萌典搜尋結果框
+              </label>
+            </div>
+            <div class="option_value_secondary">
+              <span id="popup_select_text">組合鍵</span>
+              <select name="popup_select_key" id="popup_select_key">
+                <option value="none">無</option>
+                <option value="ctrl" id="popup_select_key_ctrl">Ctrl</option>
+                <option value="command">Command</option>
+                <option value="alt">Alt</option>
+                <option value="shift">Shift</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="buttons">
+          <button id="save_button">Save</button>
+          <button id="reset_button">Reset</button>
+          <span id="save_status">Options saved</span>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
