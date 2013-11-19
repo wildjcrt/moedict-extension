@@ -1,5 +1,7 @@
 # 萌典 Chrome Extension
 
+![萌典 Chrome Extension](resources/440x280.png)
+
 [連結](https://chrome.google.com/webstore/detail/%E8%90%8C%E5%85%B8-moedict/aihifbidnaepclhnfppjnpbmeonhhloa)
 
 是否常常看到不認識的中文字，想知道字義、詞意、發音等資訊嗎？
