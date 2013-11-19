@@ -18,4 +18,4 @@
 
 本專案為 MIT License
 
-擴充套件的上架，特別致謝 @audreyt, Beer Lee, Gary Lai, Japie Wu, @miau715, @ronnywang, tkirby
+擴充套件的上架，特別致謝 @audreyt, Beer Lee, Gary Lai, Japie Wu, @miau715, @ronnywang, tkirby, @zhusee2
