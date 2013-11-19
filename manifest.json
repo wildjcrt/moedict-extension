@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "萌典 moedict",
   "description": "輕鬆查找中文字意。 View Chinese definitions easily when browsing.",
-  "version": "1.0",
+  "version": "1.0.1",
   "permissions": [
     "http://moedict.org/"
   ],
