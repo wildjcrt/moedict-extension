@@ -26,7 +26,7 @@ function selectCallback(selectionParentElement, callback) {
   });
 };
 
-document.onmouseup = function() {
+$(document).on('mouseup', function() {
   var selection = window.getSelection();
   if (selection.rangeCount > 0) {
     var range = selection.getRangeAt(0);
@@ -41,7 +41,11 @@ document.onmouseup = function() {
       });
     }
   }
-};
+});
+
+$(document).on('mouseup', '#moedict-extension', function(e){
+  e.stopPropagation();
+});
 
 $(document).on('click', function(){
   $('#moedict-extension').hide();
@@ -49,13 +53,6 @@ $(document).on('click', function(){
 
 $(document).on('click', '#moedict-extension', function(e){
   e.stopPropagation();
-});
-
-// FIX ME: dirty hack for prevent onmouseup event trigger when clicking
-$(document).on('mousedown', '#moedict-extension a', function(e){
-  window.getSelection().empty();
-}).on('mouseup', '#moedict-extension a', function(){
-  $('#moedict-extension').hide();
 });
 
 var LANG = 'a', split$ = ''.split, replace$ = ''.replace, join$ = [].join, slice$ = [].slice;
