@@ -19,10 +19,7 @@ function selectCallback(selectionParentElement, callback) {
       };
     },
     error: function(result) {
-      createDiv('查無資料');
-      if (typeof(callback) === 'function') {
-        callback();
-      };
+      return null;
     }
   });
 };
