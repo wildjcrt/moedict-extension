@@ -24,13 +24,13 @@ function selectCallback(selectionParentElement, callback) {
   });
 };
 
-$(document).on('mouseup', function() {
+$(document).on('mouseup', function(e) {
   var selection = window.getSelection();
   if (selection.rangeCount > 0) {
     var range = selection.getRangeAt(0);
     if (range.toString()) {
-      thisY = window.pageYOffset + event.clientY + 10;
-      thisX = window.pageXOffset + event.clientX + 10;
+      thisY = window.pageYOffset + e.clientY + 10;
+      thisX = window.pageXOffset + e.clientX + 10;
       selectCallback(range, function(){
         $('#moedict-extension').css('position', 'absolute');
         $('#moedict-extension').css('top', thisY);
@@ -53,7 +53,7 @@ $(document).on('click', '#moedict-extension', function(e){
   e.stopPropagation();
 });
 
-var LANG = 'a', split$ = ''.split, replace$ = ''.replace, join$ = [].join, slice$ = [].slice;
+var LANG = 'a', split$ = ''.split, replace$ = ''.replace, join$ = [].join, slice$ = [].slice, ref$;
 function canPlayOgg () { return false }
 function canPlayMp3 () { return false }
 function createDiv(content) {
