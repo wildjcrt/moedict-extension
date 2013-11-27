@@ -10,7 +10,7 @@
       "run_at": "document_idle",
       "all_frames": true,
       "matches": ["<all_urls>"],
-      "exclude_matches": ["http://moedict.org/", "https://www.moedict.tw/"]
+      "exclude_matches": ["http://moedict.org/", "http://www.moedict.org/", "https://www.moedict.tw/"]
     }
   ],
   "web_accessible_resources": [
