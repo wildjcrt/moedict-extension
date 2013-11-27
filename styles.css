@@ -2,9 +2,10 @@
 @font-face {
   font-family: "MOEDICT";
   src: url(https://www.moedict.tw/MOEDICT.eot);
-  src: url(https://www.moedict.tw/MOEDICT.eot?#iefix) format('eot'), url(https://www.moedict.tw/MOEDICT.woff) format('woff'), url(https://www.moedict.tw/MOEDICT.otf) format('opentype'), url(https://www.moedict.tw/MOEDICT.ttf) format('truetype'); }
+  src: url(https://www.moedict.tw/MOEDICT.eot?#iefix) format('eot'), url(https://www.moedict.tw/MOEDICT.woff) format('woff'), url(https://www.moedict.tw/MOEDICT.otf) format('opentype'), url(https://www.moedict.tw/MOEDICT.ttf) format('truetype');
+}
 
-#moedict-extension.ui-tooltip {
+#moedict-extension {
   font-family: "MOEDICT", "Biaodian Pro Sans CNS", "Fira Sans OT", "Lantinghei TC", "黑體-繁", "微軟正黑體", "儷黑 Pro", "蘋果儷中黑", "Adobe 繁黑體 Std", "cwTex 明體", "Adobe 明體 Std", "PMingLiU", "MingLiU", sans-serif, "HanaMinA", "HanaMinB", "HAN NOM A", "HAN NOM B";
   background: #fffcfc !important;
   border: 1px solid #a99;
@@ -20,78 +21,88 @@
   min-width: 300px;
   width: 300px;
   overflow: hidden;
-  word-break: break-all; }
-  #moedict-extension.ui-tooltip.bpmf {
-    font-size: 80%;
-    width: auto;
-    min-width: auto;
-    background: #f0f0f0; }
-  #moedict-extension.ui-tooltip .pinyin {
-    float: right; }
-  #moedict-extension.ui-tooltip .xrefs {
-    display: none; }
-  #moedict-extension.ui-tooltip .entry .part-of-speech {
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    -ms-border-radius: 3px;
-    -o-border-radius: 3px;
-    border-radius: 3px;
-    display: inline-block;
-    position: absolute;
-    left: 7px;
-    color: #eee;
-    background: rgb(107, 0, 0);
-    padding: 1px; }
-    #moedict-extension.ui-tooltip .entry .part-of-speech a {
-      cursor: normal;
-      color: #eef; }
-  #moedict-extension.ui-tooltip a {
-    color: #007; }
-  #moedict-extension.ui-tooltip li {
-    font-family: "MOEDICT", "Biaodian Pro Sans CNS", "Fira Sans OT", "Lantinghei TC", "黑體-繁", "微軟正黑體", "儷黑 Pro", "蘋果儷中黑", "Adobe 繁黑體 Std", "cwTex 明體", "Adobe 明體 Std", "PMingLiU", "MingLiU", sans-serif, "HanaMinA", "HanaMinB", "HAN NOM A", "HAN NOM B";
-    margin: 0 !important;
-    margin-left: -18px !important;
-    margin-top: 5px;
-    line-height: 1.35 !important;
-    padding: 0 !important; }
-    #moedict-extension.ui-tooltip li .part-of-speech {
-      position: relative;
-      left: 0px; }
-  #moedict-extension.ui-tooltip .ol, #moedict-extension.ui-tooltip .definition {
-    margin: 0 !important;
-    padding: 0 !important; }
-  #moedict-extension.ui-tooltip .entry {
-    padding-left: 10px;
-    border-bottom: none;
-    font-size: 80%; }
-  #moedict-extension.ui-tooltip .bopomofo {
-    margin: 0px;
-    padding: 0px;
-    font-size: 75%; }
-  #moedict-extension.ui-tooltip .title {
-    margin: 0;
-    padding: 0;
-    font-size: 130%;
-    line-height: 120%; }
-    #moedict-extension.ui-tooltip .title .playAudio {
-      display: none !important; }
-  #moedict-extension.ui-tooltip .example {
-    display: none; }
-  #moedict-extension.ui-tooltip .quote, #moedict-extension.ui-tooltip .antonyms, #moedict-extension.ui-tooltip .synonyms, #moedict-extension.ui-tooltip .variants, #moedict-extension.ui-tooltip .radical {
-    display: none; }
-  #moedict-extension.ui-tooltip a {
-    color: #000;
-    text-decoration: none;
-  }
-  #moedict-extension.ui-tooltip a:hover, #moedict-extension.ui-tooltip a:focus {
-    background: #ddd;
-    background-image: #ddd !important;
-    color: #0070A3;
-    outline: 1px solid #69d2fc;
-  }
-  #moedict-extension.ui-tooltip a.erase:hover, #moedict-extension.ui-tooltip a.lang:hover {
-    background: #ddd;
-    outline: none !important;
-    border: none;
-    border-radius: 30px;
-  }
+  word-break: break-all;
+}
+#moedict-extension .pinyin {
+  float: right;
+}
+#moedict-extension .xrefs {
+  display: none;
+}
+#moedict-extension .entry .part-of-speech {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  display: inline-block;
+  position: absolute;
+  left: 7px;
+  color: #eee;
+  background: rgb(107, 0, 0);
+  padding: 1px;
+}
+#moedict-extension .entry .part-of-speech a {
+  cursor: normal;
+  color: #eef;
+}
+#moedict-extension a {
+  color: #007;
+}
+#moedict-extension li {
+  font-family: "MOEDICT", "Biaodian Pro Sans CNS", "Fira Sans OT", "Lantinghei TC", "黑體-繁", "微軟正黑體", "儷黑 Pro", "蘋果儷中黑", "Adobe 繁黑體 Std", "cwTex 明體", "Adobe 明體 Std", "PMingLiU", "MingLiU", sans-serif, "HanaMinA", "HanaMinB", "HAN NOM A", "HAN NOM B";
+  margin: 0 !important;
+  margin-left: -18px !important;
+  margin-top: 5px;
+  line-height: 1.35 !important;
+  padding: 0 !important;
+}
+#moedict-extension li .part-of-speech {
+  position: relative;
+  left: 0px;
+}
+#moedict-extension .ol, #moedict-extension .definition {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+#moedict-extension .entry {
+  padding-bottom: 5px;
+  border-bottom: none;
+  font-size: 80%;
+}
+#moedict-extension .bopomofo {
+  margin: 0px;
+  padding: 0px;
+  font-size: 75%;
+}
+#moedict-extension .title {
+  margin: 0;
+  padding: 0;
+  font-size: 130%;
+  line-height: 120%;
+}
+#moedict-extension .title .playAudio {
+  display: none !important;
+}
+#moedict-extension .example {
+  display: none;
+}
+#moedict-extension .quote, #moedict-extension .antonyms, #moedict-extension .synonyms, #moedict-extension .variants, #moedict-extension .radical {
+  display: none;
+}
+#moedict-extension a {
+  color: #000;
+  text-decoration: none;
+}
+#moedict-extension a:hover, #moedict-extension a:focus {
+  background: #ddd;
+  background-image: #ddd !important;
+  color: #0070A3;
+  outline: 1px solid #69d2fc;
+}
+#moedict-extension a.erase:hover, #moedict-extension a.lang:hover {
+  background: #ddd;
+  outline: none !important;
+  border: none;
+  border-radius: 30px;
+}
