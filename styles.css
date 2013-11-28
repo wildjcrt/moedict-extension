@@ -49,6 +49,11 @@
 #moedict-extension a {
   color: #007;
 }
+#moedict-extension ol {
+  list-style: decimal !important;
+  padding-left: 40px !important;
+  margin: 0 0 10px !important;
+}
 #moedict-extension li {
   font-family: "MOEDICT", "Biaodian Pro Sans CNS", "Fira Sans OT", "Lantinghei TC", "黑體-繁", "微軟正黑體", "儷黑 Pro", "蘋果儷中黑", "Adobe 繁黑體 Std", "cwTex 明體", "Adobe 明體 Std", "PMingLiU", "MingLiU", sans-serif, "HanaMinA", "HanaMinB", "HAN NOM A", "HAN NOM B";
   margin: 0 !important;
@@ -56,6 +61,7 @@
   margin-top: 5px;
   line-height: 1.35 !important;
   padding: 0 !important;
+  list-style: decimal !important;
 }
 #moedict-extension li .part-of-speech {
   position: relative;
@@ -65,22 +71,25 @@
   margin: 0 !important;
   padding: 0 !important;
 }
+#moedict-extension .definition {
+  line-height: 1.4em;
+}
 #moedict-extension .entry {
-  padding-bottom: 5px;
   border-bottom: none;
-  font-size: 80%;
+  font-size: 15px;
 }
 #moedict-extension .bopomofo {
-  margin: 0px;
+  margin: 5px 0;
   padding: 0px;
-  font-size: 75%;
+  font-size: 14px;
 }
 #moedict-extension .title {
   margin: 0;
   padding: 0;
-  font-size: 130%;
-  line-height: 120%;
-}
+  font-size: 20px;
+  line-height: 1.2em;
+  color: #333;
+ }
 #moedict-extension .title .playAudio {
   display: none !important;
 }
