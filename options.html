@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>萌典 moedict 設定</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="options.css">
+    <script type="text/javascript" src="jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="options.js"></script>
+  </head>
+  <body>
+    <div id="content">
+      <h1>萌典 moedict 設定</h1>
+      <hr>
+      <div>
+        <span>查詢組合鍵：</span>
+        <select name="popup_dblclick_key" id="popup_dblclick_key">
+          <option value="none">無</option>
+          <option value="command">Command</option>
+          <option value="ctrl">Ctrl</option>
+          <option value="alt">Alt</option>
+          <option value="shift">Shift</option>
+        </select>
+      </div>
+      <br>
+      <div>
+        <i>若有設定時，要按著該按鍵並選擇，才會跳出查詢結果。</i><br>
+        <i>Command 僅支援 Mac。</i>
+      </div>
+      <br><br>
+      <div>
+        <button id="save_button">儲存</button>
+        <button id="reset_button">還原</button>
+      </div>
+    </div>
+  </body>
+</html>
+

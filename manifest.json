@@ -3,6 +3,7 @@
   "name": "萌典 moedict",
   "description": "輕鬆查找中文字意。 View Chinese definitions easily when browsing.",
   "version": "1.0.4",
+  "options_page": "options.html",
   "content_scripts": [
     {
       "js": ["jquery-1.10.2.min.js", "simp-trad.js", "content_script.js"],
