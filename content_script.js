@@ -25,6 +25,39 @@ function selectCallback(selectionParentElement, callback) {
 };
 
 $(document).on('mouseup', function(e) {
+  chrome.storage.local.get('popup_dblclick_key', function(keys) {
+    if (keys.popup_dblclick_key === 'none') {
+      triggerSelection(e);
+    } else {
+      switch (keys.popup_dblclick_key) {
+      case 'command':
+        if (e.metaKey) {
+          triggerSelection(e);
+        }
+        break;
+      case 'ctrl':
+        if (e.ctrlKey) {
+          triggerSelection(e);
+        }
+        break;
+      case 'alt':
+        if (e.altKey) {
+          triggerSelection(e);
+        }
+        break;
+      case 'shift':
+        if (e.shiftKey) {
+          triggerSelection(e);
+        }
+        break;
+      default:
+        break;
+      }
+    }
+  });
+});
+
+function triggerSelection(e) {
   var selection = window.getSelection();
   if (selection.rangeCount > 0) {
     var range = selection.getRangeAt(0);
@@ -39,7 +72,7 @@ $(document).on('mouseup', function(e) {
       });
     }
   }
-});
+}
 
 $(document).on('mouseup', '#moedict-extension', function(e){
   e.stopPropagation();
